@@ -1,0 +1,34 @@
+Explain why a number data type added to a string data type returns a string.
+
+   Because the number is coerced into a string so that they may be concatenated. This
+   is the most reasonable way to treat adding numbers and strings because while a number
+   can always be converted into a string a string can not always be converted into a number.
+
+Name a scenario where using the == operator could cause a bug.
+
+   The == operator compares two values after attempting type coercion, so a scenario
+   where this can cause a bug is when you compare two values of different types and
+   expect the result to be false but it is true. An example is shown below:
+
+   let item1 = 1;
+   let item2 = "1";
+   let test = item1 == item2;
+   console.log(test); // test will be true although the types are different
+
+Name the operator(s) that you find confusing and explain why.
+
+   I have used all of the operators discussed in the assignment, and at this point I do
+   not find any of them confusing. However, there are several operators that I have never
+   used, namely the bitwise operators ( &, |, ^, ~, <<, >>, >>>). I find these operators
+   slightly confusing because I have never had to use them and never studied them, but if
+   I had a need to manipulate binary I imagine they would be quite useful, and there are
+   useful tricks you can use them for(with the disadvantage of making your code less
+   readable).
+
+Explain a situation where you would use the Modulus operator and why.
+
+   const gcd = (m, n) => m % n === 0 ? n : gcd(n, m % n);
+
+   This is a one line recursive definition of the Euclidean Algorithm for finding the
+   greatest common divisor of two positive integers m and n. It uses the Modulus operator
+   to check for divisibility because if m % n === 0 then n divides m.
